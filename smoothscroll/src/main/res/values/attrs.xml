@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Declare attributes ONCE -->
+    <attr name="flingMultiplier" format="float" />
+    <attr name="enableSmoothPhysics" format="boolean" />
+    <attr name="enableSpringOverscroll" format="boolean" />
+
+    <!-- SmoothRecyclerView -->
+    <declare-styleable name="SmoothRecyclerView">
+        <attr name="enableSpringOverscroll" />
+        <attr name="flingMultiplier" />
+        <attr name="enableSmoothPhysics" />
+    </declare-styleable>
+
+    <!-- SmoothNestedScrollView -->
+    <declare-styleable name="SmoothNestedScrollView">
+        <attr name="flingMultiplier" />
+    </declare-styleable>
+
+</resources>

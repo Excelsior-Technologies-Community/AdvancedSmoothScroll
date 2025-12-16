@@ -11,7 +11,11 @@
     <com.ext.smoothscroll.recycler.SmoothRecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        app:flingMultiplier="0.5"
+        app:enableSpringOverscroll="true"
+        app:enableSmoothPhysics="true" />
+
 
 
 </LinearLayout>

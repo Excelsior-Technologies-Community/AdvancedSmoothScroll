@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.LinearSmoothScroller
 import androidx.recyclerview.widget.RecyclerView
 import kotlin.math.abs
+import kotlin.math.max
 
 class UltraSmoothLayoutManager(
     context: Context
@@ -19,13 +20,14 @@ class UltraSmoothLayoutManager(
         val smoothScroller = object : LinearSmoothScroller(recyclerView.context) {
 
             override fun calculateSpeedPerPixel(displayMetrics: DisplayMetrics): Float {
-                // Smaller value = slower & smoother scroll
-                return 100f / displayMetrics.densityDpi
+                // Lower = smoother & slower
+                return 120f / displayMetrics.densityDpi
             }
 
             override fun calculateTimeForScrolling(dx: Int): Int {
-                // Control scroll duration
-                return (abs(dx) * 0.5f).toInt().coerceIn(300, 1200)
+                val distance = abs(dx)
+                val duration = (distance * 0.6f).toInt()
+                return max(300, duration)
             }
         }
 
